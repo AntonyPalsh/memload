@@ -1,0 +1,17 @@
+[Unit]
+Description=Memory Load Scheduler (bash)
+After=network.target
+
+[Service]
+Type=simple
+User=data_m
+
+WorkingDirectory=/путь/к/папке/со/скриптами
+ExecStart=/bin/bash /путь/к/папке/со/скриптами/scheduler.sh
+Restart=on-failure
+RestartSec=10
+
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target
